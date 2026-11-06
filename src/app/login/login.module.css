@@ -1,0 +1,244 @@
+.page {
+  --background: #0d1424;
+  --accent: #a3ef39;
+  --text: #eef3ff;
+  --muted: #b9c3d3;
+
+  display: grid;
+  grid-template-columns: 58% 42%;
+  min-height: 100svh;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.page * {
+  box-sizing: border-box;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background:
+    linear-gradient(90deg, transparent 45%, var(--background) 100%),
+    linear-gradient(180deg, #070f19a8, #0d14241c 45%, var(--background)),
+    radial-gradient(ellipse at left center, #70c42f50, transparent 58%),
+    url("/gym-bg.jpg") center / cover no-repeat;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.brandIcon,
+.badge {
+  display: inline-grid;
+  place-items: center;
+  padding: 0.55rem;
+  border-radius: 0.65rem;
+  background: #192335;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.brand strong {
+  display: block;
+}
+
+.brand strong span,
+.heroText h2 span {
+  color: var(--accent);
+}
+
+.brand small {
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+}
+
+.indicator {
+  display: grid;
+  place-items: center;
+  width: 1.45rem;
+  height: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background: #ffffff12;
+}
+
+.indicator::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0.6rem var(--accent);
+}
+
+.heroText h2 {
+  max-width: 34rem;
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.heroText p {
+  max-width: 26rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.login {
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.5rem;
+  background: radial-gradient(ellipse at right center, #86d51b12, transparent 55%);
+}
+
+.content {
+  width: 100%;
+  max-width: 22rem;
+}
+
+.content h1 {
+  margin: 1rem 0 0.35rem;
+  font-size: 1.75rem;
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  border: 1px solid #ffffff0b;
+  border-radius: 1rem;
+  background: #141c2e;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.65rem;
+  background: #091121;
+  color: var(--muted);
+}
+
+.inputRow:focus-within {
+  border-color: var(--accent);
+}
+
+.inputRow svg {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.inputRow input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.8rem 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+}
+
+.inputRow input::placeholder {
+  color: #8592a4;
+}
+
+.toggle {
+  display: grid;
+  place-items: center;
+  padding: 0.3rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.submit {
+  margin-top: 0.75rem;
+  padding: 0.85rem;
+  border: 0;
+  border-radius: 0.65rem;
+  background: #91d414;
+  color: #172500;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 0 1rem #91d41435;
+}
+
+.submit:hover {
+  background: var(--accent);
+}
+
+.submit span {
+  margin-left: 0.35rem;
+}
+
+.register,
+.message {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.register {
+  margin: 1.5rem 0 0;
+  text-align: center;
+}
+
+.register a {
+  margin-left: 0.25rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.message {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 17rem;
+  }
+
+  .login {
+    padding-block: 2.25rem;
+  }
+}
