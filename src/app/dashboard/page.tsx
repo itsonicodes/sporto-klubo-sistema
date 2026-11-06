@@ -88,6 +88,7 @@ export default function DashboardPage() {
 
           <div className={styles.headerActions}>
             <Link className={styles.profile} href="/login">Prisijungti</Link>
+            <Link className={styles.profile} href="/profile">Profilis</Link>
           </div>
         </div>
       </header>

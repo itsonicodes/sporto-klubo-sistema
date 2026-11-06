@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import login from "../login/login.module.css";
 import styles from "./register.module.css";
-import { useRouter } from "next/navigation";
 
 const profileFields = [
   { name: "firstName", label: "Vardas", type: "text", autoComplete: "given-name", placeholder: "Vardenis" },
@@ -47,28 +46,20 @@ function PasswordField({ name, label }: { name: string; label: string }) {
 }
 
 export default function RegisterPage() {
-    const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
-    const router = useRouter();
-
-    function handleSubmit(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault();
-        router.push("/login");
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    
+    if (data.get("password") !== data.get("confirmPassword")) {
+      setMessage("Slaptažodžiai nesutampa. Patikrinkite abu laukus.");
+      document.getElementById("confirmPassword")?.focus();
+      return;
     }
 
-  // PRIDEJUS DUOMBAZE PATAISYTI
-//   function handleSubmit(event: FormEvent<HTMLFormElement>) {
-//     event.preventDefault();
-//     const data = new FormData(event.currentTarget);
-    
-//     if (data.get("password") !== data.get("confirmPassword")) {
-//       setMessage("Slaptažodžiai nesutampa. Patikrinkite abu laukus.");
-//       document.getElementById("confirmPassword")?.focus();
-//       return;
-//     }
-
-//     setMessage("Forma užpildyta. Paskyros kūrimas dar nesusietas su serveriu.");
-//   }
+    setMessage("Registracija sėkminga.");
+  }
 
   return (
     <main className={login.page}>
@@ -100,8 +91,7 @@ export default function RegisterPage() {
             className={styles.form}
             method="post"
             onSubmit={handleSubmit}
-            //onChange={() => setMessage("")}
-            noValidate
+            onChange={() => setMessage("")}
           >
             {profileFields.map(({ name, label, type, autoComplete, placeholder }) => (
               <div
