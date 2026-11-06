@@ -4,15 +4,24 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import Link from "next/link";
 import styles from "./login.module.css";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
 
+  const router = useRouter();
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage("Prisijungimas dar nesusietas su serveriu.");
+    router.push("/dashboard");
   }
+
+  // PRIDEJUS DB PATAISYTI
+  // function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  //   event.preventDefault();
+  //   setMessage("Prisijungimas dar nesusietas su serveriu.");
+  // }
 
   return (
     <main className={styles.page}>
@@ -43,7 +52,12 @@ export default function LoginPage() {
             Sveiki sugrįžę! Įveskite savo duomenis norėdami tęsti.
           </p>
 
-          <form className={styles.form} onSubmit={handleSubmit}>
+          {/* PRIDEJUS DB PATAISYTI */}
+          <form className={styles.form}
+                method="post"
+                onSubmit={handleSubmit}
+                noValidate
+                >
             <div className={styles.field}>
               <label htmlFor="email">El. paštas</label>
               <div className={styles.inputRow}>
