@@ -22,6 +22,34 @@ const profileFields = [
   { name: "birthDate", label: "Gimimo data", type: "date", autoComplete: "bday" },
 ] as const;
 
+const workoutQuestions = [
+  {
+    name: "goal",
+    label: "Pagrindinis tikslas",
+    options: ["Stiprinti jėgą", "Gerinti ištvermę", "Lavinti judrumą", "Palaikyti fizinį aktyvumą"],
+  },
+  {
+    name: "experience",
+    label: "Treniruočių patirtis",
+    options: ["Pradedu", "Treniruojuosi retkarčiais", "Treniruojuosi reguliariai"],
+  },
+  {
+    name: "frequency",
+    label: "Kiek kartų per savaitę galite treniruotis?",
+    options: ["1", "2", "3", "4 ar daugiau"],
+  },
+  {
+    name: "duration",
+    label: "Kiek laiko galite skirti vienai treniruotei?",
+    options: ["15 min.", "30 min.", "45 min.", "60 min."],
+  },
+  {
+    name: "location",
+    label: "Kur norėtumėte treniruotis?",
+    options: ["Namuose", "Sporto klube", "Lauke"],
+  },
+] as const;
+
 export default function ProfilePage() {
   const [savedProfile, setSavedProfile] = useState(initialProfile);
   const [draft, setDraft] = useState(initialProfile);
@@ -112,9 +140,7 @@ export default function ProfilePage() {
                   <div className={styles.field} key={name}>
                     <div className={styles.labelRow}>
                       <label htmlFor={name}>{label}</label>
-                      {name === "email" && draft.email === initialProfile.email && (
-                        <span className={styles.verified}>✓ Patvirtinta</span>
-                      )}
+                      {name === "email" && draft.email === initialProfile.email}
                     </div>
                     <input
                       id={name}
@@ -210,6 +236,38 @@ export default function ProfilePage() {
             </form>
           </section>
         </div>
+
+        <section
+          className={`${styles.card} ${styles.questionnaire}`}
+          aria-labelledby="workout-questionnaire-title"
+        >
+          <p className={styles.eyebrow}>Treniruočių rekomendacijos</p>
+          <h2 id="workout-questionnaire-title">Treniruočių anketa</h2>
+          <p className={styles.questionnaireIntro}>
+            Pasirinkite savo tikslą, treniruočių patirtį ir jums tinkamą grafiką.
+          </p>
+
+          <form method="post" onSubmit={(event) => event.preventDefault()}>
+            <div className={styles.fields}>
+              {workoutQuestions.map(({ name, label, options }) => (
+                <div className={styles.field} key={name}>
+                  <label htmlFor={`workout-${name}`}>{label}</label>
+                  <select id={`workout-${name}`} name={name} defaultValue="" required>
+                    <option value="" disabled>Pasirinkite</option>
+                    {options.map((option) => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+            </div>
+            <div className={styles.actions}>
+              <button type="submit" aria-describedby="workout-questionnaire-note">
+                Išsaugoti anketą
+              </button>
+            </div>
+          </form>
+        </section>
       </main>
     </div>
   );

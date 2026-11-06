@@ -221,3 +221,25 @@
 @media (max-width: 440px) {
   .fields { grid-template-columns: 1fr; }
 }
+
+.questionnaire {
+  margin-top: 1rem;
+}
+
+.questionnaireIntro {
+  margin: -0.5rem 0 1.25rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.questionnaireNote {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.questionnaire button:disabled {
+  opacity: 0.65;
+  cursor: default;
+  filter: none;
+}
