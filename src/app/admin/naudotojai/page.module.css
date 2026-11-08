@@ -1,0 +1,81 @@
+.page {
+  min-height: 100vh;
+  background: #080d0b;
+  color: #f2f5ed;
+}
+
+.container {
+  width: min(900px, 90%);
+  margin: 0 auto;
+  padding: 45px 0 70px;
+}
+
+.backLink {
+  color: #b9c2b5;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.panel {
+  padding: 35px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 18px;
+  background: #111a15;
+}
+
+.eyebrow {
+  color: #91d414;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.panel h1 {
+  margin: 12px 0;
+  font-size: 30px;
+}
+
+.panel p {
+  margin-bottom: 25px;
+  color: #9ca89c;
+  line-height: 1.6;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.table th {
+  color: #91d414;
+  font-weight: 600;
+}
+
+.actionBtn {
+  background: transparent;
+  border: 1px solid #91d414;
+  color: #91d414;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.actionBtn:hover {
+  background: #91d414;
+  color: #10160b;
+}
