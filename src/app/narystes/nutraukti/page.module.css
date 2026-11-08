@@ -1,0 +1,269 @@
+
+.main {
+  max-width: 850px;
+  padding-block: 2rem 4rem;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.panel {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: #131b2c;
+  border: 1px solid #26344b;
+  border-radius: 0.85rem;
+}
+
+.warningIcon,
+.extendIcon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.warningIcon {
+  background: #40232d;
+  color: #ff8298;
+}
+
+.extendIcon {
+  background: #263a29;
+  color: #91d414;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.panel h1 {
+  margin: 0.6rem 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.membershipBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem;
+  margin: 1.5rem 0;
+  background: #091121;
+  border: 1px solid #26344b;
+  border-radius: 0.65rem;
+}
+
+.membershipBox div {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.membershipBox span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.membershipBox strong {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.membershipBox .activeStatus {
+  color: var(--accent);
+}
+
+.notice {
+  padding: 1rem;
+  margin: 1.25rem 0;
+  background: #25251e;
+  border: 1px solid #66532d;
+  border-radius: 0.6rem;
+}
+
+.notice strong {
+  color: #f5c76b;
+  font-size: 0.85rem;
+}
+
+.notice p {
+  margin: 0.5rem 0 0;
+  color: #c4b99f;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.formLabel {
+  display: block;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.select {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0.7rem;
+  background: #091121;
+  border: 1px solid #26344b;
+  border-radius: 0.45rem;
+  color: var(--text);
+  color-scheme: dark;
+  font: inherit;
+}
+
+.sectionTitle {
+  margin: 1.75rem 0 1rem;
+  font-size: 1rem;
+}
+
+.durationOptions {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.durationOption,
+.durationSelected {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #26344b;
+  border-radius: 0.6rem;
+  background: #091121;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.durationSelected {
+  border-color: var(--accent);
+  background: #263a29;
+}
+
+.optionRadio {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.optionInfo {
+  display: grid;
+  flex: 1;
+  gap: 0.3rem;
+}
+
+.optionInfo strong {
+  font-size: 0.85rem;
+}
+
+.optionInfo small {
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+.optionPrice {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.totalBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  margin-top: 1.25rem;
+  border-top: 1px solid #26344b;
+}
+
+.totalBox span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.totalBox strong {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.secondaryButton,
+.dangerButton,
+.extendConfirmButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.45rem;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  background: #242d40;
+  color: var(--text);
+}
+
+.dangerButton {
+  border: 0;
+  background: #a9364d;
+  color: #fff;
+}
+
+.extendConfirmButton {
+  background: #91d414;
+  color: #172500;
+  box-shadow: 0 0.2rem 0.85rem #91d41440;
+}
+
+.secondaryButton:hover,
+.dangerButton:hover,
+.extendConfirmButton:hover {
+  filter: brightness(1.15);
+}
+
+@media (max-width: 500px) {
+  .membershipBox {
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions > * {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

@@ -243,3 +243,84 @@
   cursor: default;
   filter: none;
 }
+
+.membershipManagement {
+  margin-top: 1rem;
+}
+
+.membershipInfo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: #091121;
+  border: 1px solid #26344b;
+  border-radius: 0.6rem;
+}
+
+.membershipInfo > div {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.membershipLabel {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.membershipInfo strong {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.membershipActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.extendButton,
+.cancelMembershipButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.2s ease;
+}
+
+.extendButton {
+  background: #91d414;
+  color: #172500 !important; 
+  box-shadow: 0 0.2rem 0.85rem #91d41440;
+}
+
+.cancelMembershipButton {
+  background: #30202a;
+  border: 1px solid #713d4d;
+  color: #ff9cae !important;
+}
+
+.extendButton:hover,
+.cancelMembershipButton:hover {
+  filter: brightness(1.15);
+}
+
+@media (max-width: 440px) {
+  .membershipActions {
+    flex-direction: column;
+  }
+
+  .membershipActions a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

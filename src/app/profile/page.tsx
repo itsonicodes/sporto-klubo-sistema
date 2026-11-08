@@ -129,6 +129,41 @@ export default function ProfilePage() {
           </div>
         </section>
 
+        <section className={`${styles.card} ${styles.membershipManagement}`}>
+          <p className={styles.eyebrow}>● NARYSTĖS VALDYMAS</p>
+          <h2>Mano narystė</h2>
+
+          <div className={styles.membershipInfo}>
+            <div>
+              <span className={styles.membershipLabel}>Dabartinis planas</span>
+              <strong>PRO narystė</strong>
+            </div>
+
+            <div>
+              <span className={styles.membershipLabel}>Galioja iki</span>
+              <strong>2026-12-01</strong>
+            </div>
+
+            <span className={styles.badge}>● AKTYVI</span>
+          </div>
+
+          <div className={styles.membershipActions}>
+            <Link
+              href="/narystes/pratesti"
+              className={styles.extendButton}
+            >
+              ↻ Pratęsti narystę
+            </Link>
+
+            <Link
+              href="/narystes/nutraukti"
+              className={styles.cancelMembershipButton}
+            >
+              Nutraukti narystę
+            </Link>
+          </div>
+        </section>
+
         <div className={styles.columns}>
           <section className={styles.card} aria-labelledby="details-title">
             <p className={styles.eyebrow}>● Profilio konfigūracija</p>
