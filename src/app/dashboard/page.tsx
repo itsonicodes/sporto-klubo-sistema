@@ -17,12 +17,13 @@ const features = [
     href: "#treniruotės",
   },
   {
-    icon: "▤",
-    title: "Lanksčios narystės",
-    description: "Rinkis vienkartinį apsilankymą arba mėnesio planą.",
-    detail: "Planai nuo 39 €/mėn.",
-    href: "#narystes",
+    icon: "✦",
+    title: "Treniruočių pasiūlymai",
+    description: "Atrask specialius treniruočių pasiūlymus ir išsirink sau tinkamiausią.",
+    detail: "Peržiūrėti pasiūlymus",
+    href: "/pasiulymai",
   },
+
 ];
 
 const workouts = [
@@ -82,7 +83,7 @@ export default function DashboardPage() {
           <nav className={styles.nav} aria-label="Pagrindinė navigacija">
             <a className={styles.active} href="#pradzia">Pagrindinis</a>
             <a href="#treniruotes">Treniruotės</a>
-            <a href="#narystes">Narystės</a>
+            <a href="/narystes">Narystės</a>
             <a href="/tvarkarastis">Tvarkaraštis</a>
             <a href="/admin">Admin</a>
 
