@@ -1,0 +1,175 @@
+
+.page {
+  min-height: 100vh;
+  padding: 40px 24px;
+  background: #080d18;
+  color: #f4f7fb;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: #c5f36b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.backLink:hover {
+  color: #e0ff9e;
+}
+
+.detailCard {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #111a2b;
+  border: 1px solid #26344b;
+  border-radius: 18px;
+}
+
+.eyebrow {
+  color: #c5f36b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.detailCard h1 {
+  margin: 14px 0 8px;
+  font-size: 38px;
+}
+
+.description,
+.details {
+  color: #9ba8bc;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.price span {
+  color: #c5f36b;
+  font-size: 46px;
+  font-weight: 800;
+}
+
+.price small {
+  color: #8491a7;
+  font-size: 14px;
+}
+
+.duration {
+  color: #8491a7;
+  font-size: 12px;
+}
+
+.divider {
+  height: 1px;
+  margin: 30px 0;
+  background: #26344b;
+}
+
+.detailCard h2 {
+  margin: 25px 0 12px;
+  font-size: 18px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0;
+  margin: 20px 0 30px;
+  list-style: none;
+}
+
+.features li {
+  display: flex;
+  gap: 12px;
+  color: #d1d9e6;
+  font-size: 14px;
+}
+
+.features li span {
+  color: #c5f36b;
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.buyButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buyButton {
+  background: #c5f36b;
+  border: 1px solid #c5f36b;
+  color: #101827;
+}
+
+.buyButton:hover {
+  background: #d6ff8a;
+}
+
+.secondaryButton {
+  background: #1a2940;
+  border: 1px solid #344660;
+  color: #ffffff;
+}
+
+.secondaryButton:hover {
+  border-color: #c5f36b;
+}
+
+.note {
+  margin-top: 20px;
+  color: #718098;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 24px 14px;
+  }
+
+  .detailCard {
+    padding: 25px 20px;
+  }
+
+  .detailCard h1 {
+    font-size: 30px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .buyButton,
+  .secondaryButton {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

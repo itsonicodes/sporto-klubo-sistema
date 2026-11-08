@@ -189,7 +189,7 @@ export default function DashboardPage() {
               </p>
             </div>
             <div className={styles.bannerActions}>
-              <Link className={styles.button} href="/register">Pasirinkti narystę</Link>
+              <Link className={styles.button} href="/narystes">Pasirinkti narystę</Link>
               <a className={styles.secondaryButton} href="/tvarkarastis">Tvarkaraštis</a>
             </div>
           </div>

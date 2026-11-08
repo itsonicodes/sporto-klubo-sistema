@@ -1,0 +1,298 @@
+
+.page {
+  min-height: 100vh;
+  padding: 40px 24px;
+  background: #080d18;
+  color: #f4f7fb;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #c5f36b;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.checkoutGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.85fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.paymentPanel,
+.summaryPanel {
+  padding: 30px;
+  background: #111a2b;
+  border: 1px solid #26344b;
+  border-radius: 16px;
+}
+
+.eyebrow {
+  color: #c5f36b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.paymentPanel h1 {
+  margin: 12px 0 8px;
+  font-size: 27px;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  color: #8491a7;
+  font-size: 13px;
+}
+
+.paymentPanel h2,
+.summaryPanel h2 {
+  margin: 25px 0 17px;
+  font-size: 16px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.formGrid label,
+.bankInfo label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.formGrid input,
+.bankInfo select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  background: #0b1322;
+  border: 1px solid #26344b;
+  border-radius: 9px;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.formGrid input:focus,
+.bankInfo select:focus {
+  border-color: #c5f36b;
+}
+
+.formGrid input::placeholder {
+  color: #718098;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.divider {
+  height: 1px;
+  margin: 28px 0;
+  background: #26344b;
+}
+
+.methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.method,
+.selectedMethod {
+  padding: 14px;
+  background: #0b1322;
+  border: 1px solid #26344b;
+  border-radius: 9px;
+  color: #aab6c8;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.selectedMethod {
+  background: rgba(197, 243, 107, 0.08);
+  border-color: #c5f36b;
+  color: #c5f36b;
+}
+
+.method span,
+.selectedMethod span {
+  margin-right: 7px;
+  font-size: 16px;
+}
+
+.bankInfo {
+  padding: 18px;
+  background: #0b1322;
+  border-radius: 10px;
+}
+
+.bankInfo select {
+  margin-top: 8px;
+}
+
+.demoNotice {
+  display: flex;
+  gap: 10px;
+  padding: 13px;
+  margin-top: 25px;
+  background: rgba(245, 166, 35, 0.08);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  border-radius: 9px;
+  color: #c5b18b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.demoNotice span {
+  color: #f5a623;
+}
+
+.summaryPanel {
+  position: sticky;
+  top: 25px;
+}
+
+.summaryPanel h2 {
+  margin-top: 12px;
+}
+
+.membershipIcon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 25px 0 15px;
+  background: rgba(197, 243, 107, 0.12);
+  border-radius: 13px;
+  color: #c5f36b;
+  font-size: 25px;
+}
+
+.summaryPanel h3 {
+  margin: 0 0 7px;
+  font-size: 19px;
+}
+
+.summaryPanel > p {
+  margin: 0 0 25px;
+  color: #8491a7;
+  font-size: 12px;
+}
+
+.summaryLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 0;
+  border-top: 1px solid #26344b;
+  font-size: 12px;
+}
+
+.summaryLine span {
+  color: #8491a7;
+}
+
+.summaryLine strong {
+  color: #e5ebf4;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 10px;
+  border-top: 1px solid #26344b;
+}
+
+.summaryTotal span {
+  color: #aab6c8;
+  font-size: 13px;
+}
+
+.summaryTotal strong {
+  color: #c5f36b;
+  font-size: 25px;
+}
+
+.payButton {
+  width: 100%;
+  padding: 15px;
+  background: #c5f36b;
+  border: none;
+  border-radius: 10px;
+  color: #101827;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.payButton:hover {
+  background: #d6ff8a;
+}
+
+.cancelLink {
+  display: block;
+  margin-top: 15px;
+  color: #8491a7;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.secureText {
+  margin-top: 22px !important;
+  color: #718098 !important;
+  text-align: center;
+  font-size: 10px !important;
+}
+
+@media (max-width: 800px) {
+  .checkoutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryPanel {
+    position: static;
+  }
+}
+
+@media (max-width: 550px) {
+  .page {
+    padding: 22px 14px;
+  }
+
+  .paymentPanel,
+  .summaryPanel {
+    padding: 20px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fullWidth {
+    grid-column: auto;
+  }
+
+  .methods {
+    grid-template-columns: 1fr;
+  }
+}
