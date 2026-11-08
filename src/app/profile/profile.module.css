@@ -283,6 +283,10 @@
   margin-top: 1rem;
 }
 
+.cardButton {
+  min-height: 2.5rem;
+}
+
 .extendButton,
 .cancelMembershipButton {
   display: inline-flex;
@@ -295,6 +299,82 @@
   font-weight: 700;
   text-decoration: none;
   transition: filter 0.2s ease;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: #050914b8;
+}
+
+.modal {
+  width: min(100%, 30rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid #26344b;
+  border-radius: 0.75rem;
+  background: #131b2c;
+  box-shadow: 0 1rem 3rem #0008;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.modalHeader h2 { margin: 0; }
+
+.modalClose {
+  padding: 0.1rem 0.5rem !important;
+  background: transparent !important;
+  font-size: 1.5rem !important;
+}
+
+.cardForm,
+.savedCard {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.cardFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.savedCard {
+  padding: 1rem;
+  border: 1px solid #91d41466;
+  border-radius: 0.6rem;
+  background: #091121;
+}
+
+.savedCard div {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.savedCard strong {
+  letter-spacing: 0.08em;
+}
+
+.savedCard button {
+  justify-self: start;
+  background: #30202a;
+  color: #ff9cae;
+}
+
+.cardMessage {
+  min-height: 1.2rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .extendButton {
@@ -322,5 +402,9 @@
   .membershipActions a {
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .cardFormRow {
+    grid-template-columns: 1fr;
   }
 }
