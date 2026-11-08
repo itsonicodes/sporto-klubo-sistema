@@ -84,6 +84,8 @@ export default function DashboardPage() {
             <a href="#treniruotes">Treniruotės</a>
             <a href="#narystes">Narystės</a>
             <a href="/tvarkarastis">Tvarkaraštis</a>
+            <a href="/admin">Admin</a>
+
           </nav>
 
           <div className={styles.headerActions}>
