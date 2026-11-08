@@ -14,7 +14,7 @@ const features = [
     title: "Treniruotės ir programos",
     description: "Jėgos, ištvermės ir funkcinės treniruotės su treneriais.",
     detail: "Peržiūrėti treniruotes",
-    href: "#treniruotės",
+    href: "/treniruotes",
   },
   {
     icon: "✦",

@@ -1,0 +1,24 @@
+/* src/app/treniruotes/treniruotes.module.css */
+.page { min-height: 100svh; background: #0d1424; color: #e0e8ff; font-family: Arial, sans-serif; }
+.header { background: #0e1728; }
+.headerInner { display: flex; align-items: center; justify-content: space-between; width: min(100% - 3rem, 78rem); margin-inline: auto; padding-block: 0.85rem; }
+.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.05em; color: inherit; text-decoration: none; }
+.logo span { color: #a3ef39; }
+.back { color: #b8c2cf; font-size: 0.85rem; text-decoration: none; }
+.back:hover { color: #a3ef39; }
+
+.main { width: min(100% - 3rem, 78rem); margin-inline: auto; padding-block: 2rem 4rem; }
+.main h1 { font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+.subtitle { color: #b8c2cf; margin-bottom: 2rem; }
+
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+
+.card { display: flex; flex-direction: column; padding: 1.5rem; border-radius: 0.8rem; background: #171f31; color: inherit; text-decoration: none; transition: background 0.2s; }
+.card:hover { background: #202b40; }
+.card h2 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.description { color: #b8c2cf; font-size: 0.9rem; line-height: 1.5; flex-grow: 1; }
+.cardFooter { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; font-size: 0.8rem; }
+.trainer { display: inline-flex; align-items: center; gap: 0.5rem; color: #b8c2cf; }
+.avatar { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: #313d53; font-size: 0.68rem; font-weight: 800; color: #e0e8ff; }
+.detail { color: #a3ef39; font-weight: 700; }

@@ -60,7 +60,9 @@ export default async function WorkoutPage({ params }: { params: Promise<{ slug: 
         </section>
 
         <div className={styles.actions}>
-          <Link className={styles.button} href="/register">Registruotis</Link>
+           <Link className={styles.secondaryButton} href="/tvarkarastis">
+            Atšaukti registraciją
+          </Link>
           <Link className={styles.secondaryButton} href="/tvarkarastis">Grįžti į tvarkaraštį</Link>
         </div>
       </main>
