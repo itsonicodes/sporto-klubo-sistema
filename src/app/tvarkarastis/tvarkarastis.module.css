@@ -1,0 +1,37 @@
+.page { min-height: 100svh; background: #0d1424; color: #e0e8ff; font-family: Arial, sans-serif; }
+.header { background: #0e1728; }
+.headerInner {
+  display: flex; align-items: center; justify-content: space-between;
+  width: min(100% - 3rem, 78rem); margin-inline: auto;
+  padding-block: 0.85rem;
+}
+.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.05em; color: inherit; text-decoration: none; }
+.logo span { color: #a3ef39; }
+.back { color: #b8c2cf; font-size: 0.85rem; text-decoration: none; }
+.back:hover { color: #a3ef39; }
+
+.main { width: min(100% - 3rem, 78rem); margin-inline: auto; padding-block: 2rem 4rem; }
+.main h1 { font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+.subtitle { color: #b8c2cf; margin-bottom: 2rem; }
+
+.daySection { margin-bottom: 2.5rem; }
+.daySection h2 { font-size: 1.4rem; margin-bottom: 1rem; color: #a3ef39; }
+
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  display: flex; flex-direction: column; padding: 1.25rem;
+  border-radius: 0.8rem; background: #171f31; color: inherit; text-decoration: none;
+  transition: background 0.2s;
+}
+.card:hover { background: #202b40; }
+.cardTop { display: flex; justify-content: space-between; color: #a3ef39; font: 700 0.78rem monospace; margin-bottom: 0.5rem; }
+.places, .lowPlaces { padding: 0.25rem 0.5rem; border-radius: 1rem; background: #26362d; }
+.lowPlaces { background: #392f36; color: #ffad80; }
+.card h3 { margin: 0.3rem 0 0.35rem; font-size: 1.1rem; }
+.card p { margin: 0; color: #b8c2cf; font-size: 0.9rem; line-height: 1.5; }
+.cardFooter { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; font-size: 0.8rem; }
+.trainer { display: inline-flex; align-items: center; gap: 0.5rem; }
+.avatar { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: #313d53; font-size: 0.68rem; font-weight: 800; }
+.detail { color: #a3ef39; font-weight: 700; }

@@ -7,14 +7,14 @@ const features = [
     title: "Savaitės tvarkaraštis",
     description: "Peržiūrėk užsiėmimus, trenerius ir laisvas vietas.",
     detail: "Peržiūrėti tvarkaraštį",
-    href: "#tvarkarastis",
+    href: "/tvarkarastis",
   },
   {
     icon: "↗",
     title: "Treniruotės ir programos",
     description: "Jėgos, ištvermės ir funkcinės treniruotės su treneriais.",
     detail: "Peržiūrėti treniruotes",
-    href: "#tvarkarastis",
+    href: "#treniruotės",
   },
   {
     icon: "▤",
@@ -83,7 +83,7 @@ export default function DashboardPage() {
             <a className={styles.active} href="#pradzia">Pagrindinis</a>
             <a href="#treniruotes">Treniruotės</a>
             <a href="#narystes">Narystės</a>
-            <a href="#tvarkarastis">Tvarkaraštis</a>
+            <a href="/tvarkarastis">Tvarkaraštis</a>
           </nav>
 
           <div className={styles.headerActions}>
@@ -103,9 +103,9 @@ export default function DashboardPage() {
               Vienoje vietoje rask treniruočių tvarkaraštį, išsirink užsiėmimą
               ir susipažink su sporto klubo narystėmis.
             </p>
-            <a className={styles.button} href="#tvarkarastis">
+            <Link className={styles.button} href="/tvarkarastis">
               Savaitės tvarkaraštis <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -190,7 +190,7 @@ export default function DashboardPage() {
             </div>
             <div className={styles.bannerActions}>
               <Link className={styles.button} href="/register">Pasirinkti narystę</Link>
-              <a className={styles.secondaryButton} href="#tvarkarastis">Tvarkaraštis</a>
+              <a className={styles.secondaryButton} href="/tvarkarastis">Tvarkaraštis</a>
             </div>
           </div>
         </section>

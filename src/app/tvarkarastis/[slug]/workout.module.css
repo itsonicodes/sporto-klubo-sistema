@@ -1,0 +1,34 @@
+.page { min-height: 100svh; background: #0d1424; color: #e0e8ff; font-family: Arial, sans-serif; }
+.header { background: #0e1728; }
+.headerInner {
+  display: flex; align-items: center; justify-content: space-between;
+  width: min(100% - 3rem, 78rem); margin-inline: auto; padding-block: 0.85rem;
+}
+.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.05em; color: inherit; text-decoration: none; }
+.logo span { color: #a3ef39; }
+.back { color: #b8c2cf; font-size: 0.85rem; text-decoration: none; }
+.back:hover { color: #a3ef39; }
+
+.main { width: min(100% - 3rem, 60rem); margin-inline: auto; padding-block: 2.5rem 4rem; }
+.eyebrow { color: #43d6ef; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.main h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+.lead { color: #b8c2cf; font-size: 1.1rem; line-height: 1.5; margin-bottom: 2rem; }
+
+.infoGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+.infoCard { background: #171f31; padding: 1rem 1.25rem; border-radius: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #b8c2cf; font-weight: 700; }
+.value { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; }
+.avatar { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: #313d53; font-size: 0.68rem; }
+
+.details h2 { font-size: 1.4rem; margin-bottom: 0.6rem; color: #a3ef39; }
+.details p { color: #b8c2cf; line-height: 1.7; margin-bottom: 2rem; }
+
+.actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.button, .secondaryButton {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.9rem 1.2rem; border-radius: 0.45rem; font-weight: 800; text-decoration: none;
+}
+.button { background: #a3ef39; color: #172500; }
+.button:hover { background: #b8f763; }
+.secondaryButton { background: #313b50; color: #e0e8ff; }
+.secondaryButton:hover { background: #3b4760; }
