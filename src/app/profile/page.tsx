@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState, type FormEvent } from "react";
 import dashboard from "../dashboard/dashboard.module.css";
 import styles from "./profile.module.css";
 
@@ -14,6 +15,13 @@ const initialProfile = {
   gender: "male",
 };
 
+type SavedCard = {
+  cardholder: string;
+  number: string;
+  expiry: string;
+};
+
+const savedCardStorageKey = "gym-saved-card";
 const profileFields = [
   { name: "firstName", label: "Vardas", type: "text", autoComplete: "given-name" },
   { name: "lastName", label: "Pavardė", type: "text", autoComplete: "family-name" },
@@ -51,11 +59,28 @@ const workoutQuestions = [
 ] as const;
 
 export default function ProfilePage() {
+  const router = useRouter();
   const [savedProfile, setSavedProfile] = useState(initialProfile);
   const [draft, setDraft] = useState(initialProfile);
   const [profileMessage, setProfileMessage] = useState("");
   const [passwordMessage, setPasswordMessage] = useState("");
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+  const [savedCard, setSavedCard] = useState<SavedCard | null>(null);
+  const [cardMessage, setCardMessage] = useState("");
+
+  useEffect(() => {
+    const storedCard = window.localStorage.getItem(savedCardStorageKey);
+
+    if (storedCard) {
+      try {
+        setSavedCard(JSON.parse(storedCard) as SavedCard);
+      } catch {
+        window.localStorage.removeItem(savedCardStorageKey);
+      }
+    }
+
+  }, []);
 
   const fullName = `${savedProfile.firstName} ${savedProfile.lastName}`;
   const initials = `${savedProfile.firstName[0] ?? ""}${savedProfile.lastName[0] ?? ""}`;
@@ -94,6 +119,34 @@ export default function ProfilePage() {
     setPasswordMessage("Slaptažodžiui pakeisti reikia prijungti serverio funkciją.");
   }
 
+  function saveCard(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const card = {
+      cardholder: String(formData.get("cardholder")).trim(),
+      number: String(formData.get("cardNumber")).replace(/\s/g, ""),
+      expiry: String(formData.get("expiry")),
+    };
+
+    if (!card.cardholder || card.number.length < 16 || !card.expiry) {
+      setCardMessage("Patikrinkite kortelės duomenis.");
+      return;
+    }
+
+    const cardToSave = { ...card, number: card.number.slice(-4) };
+    window.localStorage.setItem(savedCardStorageKey, JSON.stringify(cardToSave));
+    setSavedCard(cardToSave);
+    setCardMessage("Kortelė išsaugota.");
+    event.currentTarget.reset();
+  }
+
+  function deleteCard() {
+    window.localStorage.removeItem(savedCardStorageKey);
+    setSavedCard(null);
+    setCardMessage("Kortelė ištrinta.");
+  }
+
   return (
     <div className={dashboard.page}>
       <header className={dashboard.header}>
@@ -102,16 +155,9 @@ export default function ProfilePage() {
             Gym<span>−</span>
           </Link>
 
-          <nav className={dashboard.nav} aria-label="Pagrindinė navigacija">
-            <Link href="/dashboard">Pagrindinis</Link>
-            <Link href="/dashboard#treniruotes">Treniruotės</Link>
-            <Link href="/dashboard#narystes">Narystės</Link>
-            <Link href="/dashboard#tvarkarastis">Tvarkaraštis</Link>
-          </nav>
-
           <div className={dashboard.headerActions}>
-            <Link className={dashboard.profile} href="/profile" aria-current="page">
-              Profilis
+            <Link className={styles.back} href="/dashboard" aria-current="page">
+              ← Atgal į pradžią
             </Link>
           </div>
         </div>
@@ -148,6 +194,25 @@ export default function ProfilePage() {
           </div>
 
           <div className={styles.membershipActions}>
+            <button
+              className={styles.cardButton}
+              type="button"
+              onClick={() => {
+                setCardMessage("");
+                setIsCardModalOpen(true);
+              }}
+            >
+              Mano kortelės
+            </button>
+
+            <button
+              className={styles.cardButton}
+              type="button"
+              onClick={() => router.push("/profile/saskaitos")}
+            >
+              Mano sąskaitos
+            </button>
+
             <Link
               href="/narystes/pratesti"
               className={styles.extendButton}
@@ -304,6 +369,85 @@ export default function ProfilePage() {
           </form>
         </section>
       </main>
+
+      {isCardModalOpen && (
+        <div
+          className={styles.modalBackdrop}
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              setIsCardModalOpen(false);
+            }
+          }}
+        >
+          <section
+            className={styles.modal}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="card-modal-title"
+          >
+            <div className={styles.modalHeader}>
+              <div>
+                <p className={styles.eyebrow}>Mokėjimai</p>
+                <h2 id="card-modal-title">Mano kortelės</h2>
+              </div>
+              <button
+                className={styles.modalClose}
+                type="button"
+                aria-label="Uždaryti"
+                onClick={() => setIsCardModalOpen(false)}
+              >
+                ×
+              </button>
+            </div>
+
+            {savedCard ? (
+              <div className={styles.savedCard}>
+                <div>
+                  <span className={styles.membershipLabel}>Išsaugota kortelė</span>
+                  <strong>•••• •••• •••• {savedCard.number}</strong>
+                </div>
+                <span>{savedCard.expiry}</span>
+                <button type="button" onClick={deleteCard}>Ištrinti</button>
+              </div>
+            ) : (
+              <form className={styles.cardForm} onSubmit={saveCard}>
+                <div className={styles.field}>
+                  <label htmlFor="cardholder">Kortelės savininkas</label>
+                  <input id="cardholder" name="cardholder" autoComplete="cc-name" required />
+                </div>
+                <div className={styles.field}>
+                  <label htmlFor="card-number">Kortelės numeris</label>
+                  <input
+                    id="card-number"
+                    name="cardNumber"
+                    inputMode="numeric"
+                    autoComplete="cc-number"
+                    maxLength={19}
+                    placeholder="1234 5678 9012 3456"
+                    required
+                  />
+                </div>
+                <div className={styles.cardFormRow}>
+                  <div className={styles.field}>
+                    <label htmlFor="card-expiry">Galioja iki</label>
+                    <input id="card-expiry" name="expiry" placeholder="MM/YY" autoComplete="cc-exp" required />
+                  </div>
+                  <div className={styles.field}>
+                    <label htmlFor="card-cvv">CVV</label>
+                    <input id="card-cvv" name="cvv" type="password" inputMode="numeric" autoComplete="cc-csc" maxLength={4} required />
+                  </div>
+                </div>
+                <p className={styles.cardMessage} role="status">{cardMessage}</p>
+                <button className={styles.primary} type="submit">Išsaugoti</button>
+              </form>
+            )}
+
+            {savedCard && <p className={styles.cardMessage} role="status">{cardMessage}</p>}
+          </section>
+        </div>
+      )}
+
     </div>
   );
 }

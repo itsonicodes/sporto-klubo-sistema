@@ -82,7 +82,7 @@ export default function DashboardPage() {
 
           <nav className={styles.nav} aria-label="Pagrindinė navigacija">
             <a className={styles.active} href="#pradzia">Pagrindinis</a>
-            <a href="#treniruotes">Treniruotės</a>
+            <a href="/treniruotes">Treniruotės</a>
             <a href="/narystes">Narystės</a>
             <a href="/tvarkarastis">Tvarkaraštis</a>
             <a href="/admin">Admin</a>
@@ -90,7 +90,7 @@ export default function DashboardPage() {
           </nav>
 
           <div className={styles.headerActions}>
-            <Link className={styles.profile} href="/login">Prisijungti</Link>
+            <Link className={styles.profile} href="/login">Atsijungti</Link>
             <Link className={styles.profile} href="/profile">Profilis</Link>
           </div>
         </div>
