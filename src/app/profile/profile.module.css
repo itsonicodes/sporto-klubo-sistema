@@ -408,3 +408,6 @@
     grid-template-columns: 1fr;
   }
 }
+
+.back { color: #b8c2cf; font-size: 0.85rem; text-decoration: none; }
+.back:hover { color: #a3ef39; }

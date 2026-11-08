@@ -155,16 +155,9 @@ export default function ProfilePage() {
             Gym<span>−</span>
           </Link>
 
-          <nav className={dashboard.nav} aria-label="Pagrindinė navigacija">
-            <Link href="/dashboard">Pagrindinis</Link>
-            <Link href="/dashboard#treniruotes">Treniruotės</Link>
-            <Link href="/dashboard#narystes">Narystės</Link>
-            <Link href="/dashboard#tvarkarastis">Tvarkaraštis</Link>
-          </nav>
-
           <div className={dashboard.headerActions}>
-            <Link className={dashboard.profile} href="/profile" aria-current="page">
-              Profilis
+            <Link className={styles.back} href="/dashboard" aria-current="page">
+              ← Atgal į pradžią
             </Link>
           </div>
         </div>
